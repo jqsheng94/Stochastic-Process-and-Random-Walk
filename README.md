@@ -13,3 +13,5 @@ Prob (Down) = 0.1
 ```
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/RandomWalk.gif)
+
+At each coordinate, the probability of the next move is independent of the previous one. 
