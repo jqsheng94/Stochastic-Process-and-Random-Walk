@@ -20,6 +20,7 @@ for i in range(10000):
     if i == 0:
         x = [initial[0]]
         y = [initial[1]]
+        Points.append((x, y))
     else:
         p = random.uniform(0, 1)
         if p <= Left:
@@ -32,9 +33,10 @@ for i in range(10000):
             initial = (initial[0], initial[1] - 1)
         x = [initial[0]]
         y = [initial[1]]
-        if (initial[0]) ** 2 + (initial[1]) ** 2 >= radius ** 2:
+        Points.append((x, y))
+        if (initial[0]) ** 2 + (initial[1]) ** 2 > radius ** 2:
             break
-    Points.append((x, y))
+    
 
 def init():
     line.set_data([], [])
@@ -59,7 +61,7 @@ ax.add_patch(circ)
 anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=len(Points), interval=500, blit=True)
 
-anim.save('RandomWalk.mp4',extra_args=['-vcodec', 'libx264'])
+anim.save('RandomWalk.mp4',fps=1.0 ,dpi=200)
 
 plt.show()
 

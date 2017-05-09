@@ -43,7 +43,7 @@ class RandomWalk():
                 new_x = [initial[0]]
                 new_y = [initial[1]]
                 points.set_data(new_x, new_y)
-                if (initial[0]) ** 2 + (initial[1]) ** 2 >= self.radius ** 2:
+                if (initial[0]) ** 2 + (initial[1]) ** 2 > self.radius ** 2:
                     break
             Points.append((new_x, new_y))
             plt.pause(0.5)

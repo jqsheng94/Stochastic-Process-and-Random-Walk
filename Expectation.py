@@ -28,7 +28,7 @@ class RandomWalk():
                     initial = (initial[0], initial[1] + 1)
                 else:
                     initial = (initial[0], initial[1] - 1)
-                if (initial[0]) ** 2 + (initial[1]) ** 2 >= self.radius ** 2:
+                if (initial[0]) ** 2 + (initial[1]) ** 2 > self.radius ** 2:
                     break
                 Points.append(initial)
         return len(Points)
