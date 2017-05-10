@@ -12,6 +12,8 @@ Prob (North) =  0.35
 Prob (South) = 0.1
 ```
 
+
+
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/RandomWalk.gif)
 
 At each coordinate, the probability of the next move is independent of the previous one. 
@@ -22,6 +24,8 @@ For each time the walker escape from the circle, we count it as one even and rec
 E(X) = 36.38841
 ```
 
-One for 10000 experiments, we get the expected value of 36.38841. 
+After execute the simulation 10000 times, we get the stable results of 36.38841 which is also known as the expected value of the number of steps. 
+
+
 
 
