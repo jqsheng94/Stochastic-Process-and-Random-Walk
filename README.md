@@ -6,20 +6,12 @@ Let's start with an simple exmple of a discrete-time ramdom walk in which the le
 At each position, the walker can move toward four directions with uniformly distributed probability. Turn North, turn South, turn East and turn West. The probability of each direction is shown below: 
 
 ``` Python
-Prob (West) = 0.3
-Prob (East) = 0.25
-Prob (North) =  0.35
-Prob (South) = 0.1
-
+# Probability of each direction
 West = 0.3
 East = 0.25
 North = 0.35
 South = 0.1
-radius = 10
 initial = (0, 0)
-
-
-Points = []
 
 for i in range(10000):
     if i == 0:
@@ -35,8 +27,7 @@ for i in range(10000):
         elif p > West + East and p <= West + East + North:
             initial = (initial[0], initial[1] + 1)
         else:
-            initial = (initial[0], initial[1] - 1)
-            
+            initial = (initial[0], initial[1] - 1)            
 ```
 
 
