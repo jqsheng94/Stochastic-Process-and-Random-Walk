@@ -15,3 +15,13 @@ Prob (South) = 0.1
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/RandomWalk.gif)
 
 At each coordinate, the probability of the next move is independent of the previous one. 
+
+For each time the walker escape from the circle, we count it as one even and record the number of steps it use to exit. Repeat the same process 10000 times, and then get the average of steps that walker need to stop the process.
+
+```
+E(X) = 36.38841
+```
+
+One for 10000 experiments, we get the expected value of 36.38841. 
+
+

@@ -10,10 +10,10 @@ class RandomWalk():
     def __init__(self, **kwargs):
         self.NumberOfSteps = kwargs.get("NumberOfSteps")
         self.NumberOfInteration = kwargs.get("NumberOfInteration")
-        self.Left = 0.3
-        self.Right = 0.25
-        self.Up = 0.35
-        self.Down = 0.1
+        self.West = 0.3
+        self.East = 0.25
+        self.North = 0.35
+        self.South = 0.1
         self.radius = 10
 
     def OneIeteration(self):
@@ -32,11 +32,11 @@ class RandomWalk():
                 points, = ax.plot(new_x, new_y, marker='o')
             else:
                 p = random.uniform(0, 1)
-                if p <= self.Left:
+                if p <= self.West:
                     initial = (initial[0] - 1, initial[1])
-                elif p > self.Left and p <= self.Left + self.Right:
+                elif p > self.West and p <= self.West + self.East:
                     initial = (initial[0] + 1, initial[1])
-                elif p > self.Left + self.Right and p <= self.Left + self.Right + self.Up:
+                elif p > self.West + self.East and p <= self.West + self.East + self.North:
                     initial = (initial[0], initial[1] + 1)
                 else:
                     initial = (initial[0], initial[1] - 1)

@@ -6,10 +6,10 @@ import random
 from matplotlib import animation
 
 
-Left = 0.3
-Right = 0.25
-Up = 0.35
-Down = 0.1
+West = 0.3
+East = 0.25
+North = 0.35
+South = 0.1
 radius = 10
 initial = (0, 0)
 
@@ -23,11 +23,11 @@ for i in range(10000):
         Points.append((x, y))
     else:
         p = random.uniform(0, 1)
-        if p <= Left:
+        if p <= West:
             initial = (initial[0] - 1, initial[1])
-        elif p > Left and p <= Left + Right:
+        elif p > West and p <= West + East:
             initial = (initial[0] + 1, initial[1])
-        elif p > Left + Right and p <= Left + Right + Up:
+        elif p > West + East and p <= West + East + North:
             initial = (initial[0], initial[1] + 1)
         else:
             initial = (initial[0], initial[1] - 1)
