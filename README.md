@@ -61,10 +61,10 @@ anim.save('RandomWalk.mp4',fps=1.0 ,dpi=200)
 ```
 In ```animation.FuncAnimation``` function, it accepts an argument ```frame``` which control the number of frames deplayed. We've chosen the number of steps as the frame number with a 500ms delay between frames. The defalt delay is 200ms if not specified. After animation is generated, we can either display the plot or save it into a MP4 file.
 
-For the display animation, the duration is going to be frames * interval / 1000 (in seconds)
+For the display animation, the duration is going to be frames * interval / 1000 (in seconds). 
 To display animation clock to click every second, set ```interval=1000```.
 
-For the saved animation, the duration is going to be frames * (1 / fps) (in seconds)
+For the saved animation, the duration is going to be frames * (1 / fps) (in seconds). 
 To save animation clock to tick every second, set ```fps=1```. (The number I use in the example).
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/RandomWalk.gif)
