@@ -32,6 +32,32 @@ for i in range(10000):
 
 The animation tool ```matplotlib``` is used to better visulize the random walk process. ```FuncAnimation``` built in ```matplotlib.animation.Animation``` provides a clear step by step walking process. 
 
+``` Python
+def init():
+    line.set_data([], [])
+    return line,
+
+def animate(s):
+    A = Points[s]
+    xs = np.array(A[0])
+    ys = np.array(A[1])
+    line.set_data(xs, ys)
+    return line,
+
+
+matplotlib.style.use('ggplot')
+fig = plt.figure()
+ax = plt.axes(xlim=(-12, 12), ylim=(-12, 12))
+line, = ax.plot([], [], lw=2, marker='o')
+circ = plt.Circle((0, 0), radius=10, fill=False, color='brown', linewidth=2)  # Draw a circle centered in (0, 0) with a radius of 10. 
+ax.add_patch(circ)
+
+
+anim = animation.FuncAnimation(fig, animate, init_func=init, frames=len(Points), interval=500, blit=True)
+
+anim.save('RandomWalk.mp4',fps=1.0 ,dpi=200)
+```
+
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/RandomWalk.gif)
 
