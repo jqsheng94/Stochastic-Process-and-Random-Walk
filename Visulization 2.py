@@ -1,15 +1,12 @@
 
 import matplotlib.pyplot as plt
 import matplotlib.style
-from matplotlib import animation
-from statistics import mean
 import random
 
 
 class RandomWalk():
     def __init__(self, **kwargs):
         self.NumberOfSteps = kwargs.get("NumberOfSteps")
-        self.NumberOfInteration = kwargs.get("NumberOfInteration")
         self.West = 0.3
         self.East = 0.25
         self.North = 0.35
@@ -51,7 +48,7 @@ class RandomWalk():
 
 
 
-Animation = RandomWalk(NumberOfSteps = 10000, NumberOfInteration = 10000).OneIeteration()
+Animation = RandomWalk(NumberOfSteps = 10000).OneIeteration()
 print(Animation)
 
 
