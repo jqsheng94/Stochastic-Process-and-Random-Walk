@@ -54,52 +54,31 @@ for i in range(10000):
         Points.append((x, y, z))       
         if (initial[0]) ** 2 + (initial[1]) ** 2 +(initial[2])**2 > radius ** 2:
             break
-        
-def init():
-    line.set_data([], [], [])
-    return line,
 
-def animate(s):
-    A = Points[s]
+def animate(i):
+    A = Points[i]
     xs = np.array(A[0])
     ys = np.array(A[1])
     zs = np.array(A[2])
-    line.set_data(xs, ys, zs)
-    return line,
-        
+    graph.set_data(xs, ys)
+    graph.set_3d_properties(zs)
+    return graph,
+
+
 matplotlib.style.use('ggplot')
-fig = plt.figure()
-ax = plt.axes(xlim=(-12, 12), ylim=(-12, 12)
-line, = ax.plot([], [], [], lw=2, marker='o')
-#circ = plt.Circle((0, 0), radius=10, fill=False, color='brown', linewidth=2)
-#ax.add_patch(circ)
+fig = plt.figure(figsize=(5,5))
+ax1 = fig.add_subplot(111, projection='3d')
+u, v = np.mgrid[0:2 * np.pi:200j, 0:np.pi:200j]
+x = np.cos(u) * np.sin(v) * 10
+y = np.sin(u) * np.sin(v) * 10
+z = np.cos(v) * 10
+ax1.plot_wireframe(x, y, z, rstride=10, cstride=15, linewidth=0.5, color='brown')
+ax1.set_xlim(-15, 15)
+ax1.set_ylim(-15, 15)
+ax1.set_zlim(-15, 15)
 
 
-anim = animation.FuncAnimation(fig, animate, init_func=init,
-                               frames=len(Points), interval=500, blit=True)
-
-anim.save('3D.mp4',fps=1.0 ,dpi=200)
-
+graph, = ax1.plot([0], [0], [0], linestyle="", marker="o")
+ani = matplotlib.animation.FuncAnimation(fig, animate, frames=len(Points), interval=500, blit=True)
+nim.save('3DRandomWalk.mp4',fps=1.0 ,dpi=200)
 plt.show()
-
-#    def OneIeteration(self):
-#        matplotlib.style.use('ggplot')
-#        fig = plt.figure(figsize=(15,15))
-#        ax1 = fig.add_subplot(111, projection='3d')
-#        u, v = np.mgrid[0:2*np.pi:200j, 0:np.pi:200j]
-#        x=np.cos(u)*np.sin(v)*10
-#        y=np.sin(u)*np.sin(v)*10
-#        z=np.cos(v)*10
-#        ax1.plot_wireframe(x, y, z, rstride = 10, cstride = 15, linewidth = 0.5, color = 'brown')
-#        ax1.set_xlim(-12, 12)
-#        ax1.set_ylim(-12, 12)
-#        ax1.set_zlim(-12, 12)
-#        plt.show()
-#        
-#                plt.pause(0.5)
-#        return len(Points)
-#
-#
-#
-#ExpectedNumberOfSteps = RandomWalk(NumberOfSteps = 10000).OneIeteration()
-#print(ExpectedNumberOfSteps)

@@ -34,7 +34,6 @@ class RandomWalk():
         ax1.set_xlim(-12, 12)
         ax1.set_ylim(-12, 12)
         ax1.set_zlim(-12, 12)
-        plt.show()
         Points = []
         initial = (0, 0, 0)
         for i in range(self.NumberOfSteps):
@@ -42,7 +41,7 @@ class RandomWalk():
                 new_x = [initial[0]]
                 new_y = [initial[1]]
                 new_z = [initial[2]]
-                points, = ax1.plot(new_x, new_y, new_z, marker='o')
+                ax1.plot(new_x, new_y, new_z, ls="None", marker="o")
             else:
                 p = random.uniform(0, 1)
                 if p <= self.West:
@@ -58,7 +57,7 @@ class RandomWalk():
                 new_x = [initial[0]]
                 new_y = [initial[1]]
                 new_z = [initial[2]]
-                points.set_data(new_x, new_y)            
+                ax1.plot(new_x, new_y, new_z, ls="None", marker="o")
                 if (initial[0]) ** 2 + (initial[1]) ** 2 +(initial[2])**2 > self.radius ** 2:
                     break
                 Points.append(initial)
