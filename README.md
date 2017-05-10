@@ -30,6 +30,7 @@ for i in range(10000):
             initial = (initial[0], initial[1] - 1)            
 ```
 
+The animation tool ```matplotlib``` is used to better visulize the random walk process. ```FuncAnimation``` built in ```matplotlib.animation.Animation``` provides a clear step by step walking process. 
 
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/RandomWalk.gif)
