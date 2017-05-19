@@ -79,6 +79,22 @@ E(X) = 36.38841
 
 After run the simulation ```10000``` times, we get the stable results of ```36.38841``` which is also known as the expected value of the number of steps. 
 
+We can apply the same theory to study three dimentional random walk. 
+
+``` Python
+# Probability of each direction
+West = 0.1
+East = 0.2
+North = 0.35
+South = 0.05
+Up = 0.15
+Down = 0.15
+initial = (0, 0, 0)
+radius = 10
+```
+
+Here is the simulation animation for 3-dimentional random walk. 
+
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/3DRandomWalk2.gif)
 
 
