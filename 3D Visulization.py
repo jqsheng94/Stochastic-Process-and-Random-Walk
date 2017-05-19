@@ -80,5 +80,5 @@ ax1.set_zlim(-15, 15)
 
 graph, = ax1.plot([0], [0], [0], linestyle="", marker="o")
 ani = matplotlib.animation.FuncAnimation(fig, animate, frames=len(Points), interval=500, blit=True)
-nim.save('3DRandomWalk.mp4',fps=1.0 ,dpi=200)
+ani.save('3DRandomWalk.mp4',fps=1.0 ,dpi=200)
 plt.show()
