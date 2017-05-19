@@ -79,6 +79,7 @@ E(X) = 36.38841
 
 After run the simulation ```10000``` times, we get the stable results of ```36.38841``` which is also known as the expected value of the number of steps. 
 
+![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/3DRandomWalk2.gif)
 
 
 
