@@ -83,9 +83,9 @@ class ScatterAnimation(object):
         y = np.sin(u) * np.sin(v) * self.radius
         z = np.cos(v) * self.radius
         ax1.plot_wireframe(x, y, z, rstride=10, cstride=15, linewidth=0.5, color='brown')
-        ax1.set_xlim(-15, 15)
-        ax1.set_ylim(-15, 15)
-        ax1.set_zlim(-15, 15)
+        ax1.set_xlim(-12, 12)
+        ax1.set_ylim(-12, 12)
+        ax1.set_zlim(-12, 12)
         self.graph, = ax1.plot([self.initial[0]], [self.initial[1]], [self.initial[2]], linestyle="", marker="o")
         self.title = ax1.set_title('3D Random Walk')
         ani = animation.FuncAnimation(fig, self.animate, frames=len(self.Points), interval=500, blit=True)
