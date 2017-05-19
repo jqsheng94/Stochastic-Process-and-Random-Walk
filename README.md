@@ -97,5 +97,11 @@ Here is the simulation animation for 3-dimentional random walk.
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/3DRandomWalk2.gif)
 
+We count each time escape from the sphere  as one event and calculate the numbers of steps for each event. Repeat the same process 10000 times and finally approaches to a constant number ```25.70093```.
+
+```
+E(X) = 25.70093
+```
+After run the simulation ```10000``` times, we get the expection of  ```25.70093``` as the average number of steps to get out of the sphere. 
 
 
