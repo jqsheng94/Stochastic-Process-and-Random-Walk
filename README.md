@@ -1,9 +1,9 @@
 # Stochastic-Process-and-Random-Walk
 
 
-Let's start with an simple exmple of a discrete-time ramdom walk in which the length of each step is 1. The walker is initially at an coordinates (0, 0) which is the center of the circle. The stochastic process stops once the walker escape from the circle with redius of 10. 
+Let's start with an simple example of a discrete-time random walk in which the length of each step is 1. The walker is initially at the coordinates (0, 0) which is the center of the circle. The stochastic process stops once the walker escape from the circle with a radius of 10. 
 
-At each position, the walker can move toward four directions with uniformly distributed probability. Turn North, turn South, turn East and turn West. The probability of each direction is shown below: 
+At each position, the walker can move towards four directions with uniformly distributed probability. Turn North, turn South, turn East and turn West. The probability of each direction is shown below: 
 
 ``` Python
 # Probability of each direction
@@ -30,7 +30,7 @@ for i in range(10000):
             initial = (initial[0], initial[1] - 1)            
 ```
 
-The animation tool ```matplotlib``` is used to better visulize the random walk process. ```FuncAnimation``` built in ```matplotlib.animation.Animation``` provides a clear step by step walking process. 
+The animation tool ```matplotlib``` is used to better visualize the random walk process. ```FuncAnimation``` built in ```matplotlib.animation.Animation``` provides a clear step by step walking process. 
 
 For one simulation, we get the coordinates of each position and saved in ```animate(s)``` function where ```s``` means the ```nth``` step of the simulation. 
 
@@ -59,7 +59,7 @@ anim = animation.FuncAnimation(fig, animate, init_func=init, frames=len(Points),
 
 anim.save('RandomWalk.mp4',fps=1.0 ,dpi=200)
 ```
-In ```animation.FuncAnimation``` function, it accepts an argument ```frame``` which control the number of frames deplayed. We've chosen the number of steps as the frame number with a 500ms delay between frames. The defalt delay is 200ms if not specified. After animation is generated, we can either display the plot or save it into a MP4 file.
+In ```animation.FuncAnimation``` function, it accepts an argument ```frame``` which control the number of frames desplayed. We've chosen the number of steps as the frame number with a 500ms delay between frames. The default delay is 200ms if not specified. After animation is generated, we can either display the plot or save it into a MP4 file.
 
 For the display animation, the duration is going to be frames * interval / 1000 (in seconds). 
 To display animation clock to click every second, set ```interval=1000```.
@@ -71,7 +71,7 @@ To save animation clock to tick every second, set ```fps=1```. (The number I use
 
 At each coordinate, the probability of the next move is independent of the previous one. 
 
-For each time the walker escape from the circle, we count it as one even and record the number of steps it use to exit. Repeat the same process 10000 times, and then get the average of steps that walker need to stop the process.
+For each time the walker escape from the circle, we count it as one event and record the number of steps it used to exit. Repeat the same process 10000 times, and then get the average number of steps that walker need to stop the process.
 
 ```
 E(X) = 36.38841
@@ -79,7 +79,7 @@ E(X) = 36.38841
 
 After run the simulation ```10000``` times, we get the stable results of ```36.38841``` which is also known as the expected value of the number of steps. 
 
-We can apply the same theory to study three dimentional random walk. 
+We can apply the same theory to study three dimensional random walk. The walker starts at the coordinate (0, 0, 0) and at each step he will move to one of six directions based on different probabilities. 
 
 ``` Python
 # Probability of each direction
@@ -93,15 +93,15 @@ initial = (0, 0, 0)
 radius = 10
 ```
 
-Here is the simulation animation for 3-dimentional random walk. 
+Here is the simulation animation for 3-dimensional random walk. 
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/3DRandomWalk2.gif)
 
-We count each time escape from the sphere  as one event and calculate the numbers of steps for each event. Repeat the same process 10000 times and finally approaches to a constant number ```25.70093```.
+We count each time that walker escapes from the sphere as one event and record the numbers of steps for each event. Repeat the same process 10000 times and finally approaches to a constant number ```25.70093```.
 
 ```
 E(X) = 25.70093
 ```
-After run the simulation ```10000``` times, we get the expection of  ```25.70093``` as the average number of steps to get out of the sphere. 
+After run the simulation ```10000``` times, we get the expectation of  ```25.70093``` as the average number of steps to get out of the sphere. 
 
 
