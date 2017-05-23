@@ -1,9 +1,10 @@
 # Stochastic-Process-and-Random-Walk
 
+A popular random walk model is that of a random walk on a regular lattice, where at each step the location jumps to another site according to some probability distribution. In a simple random walk, the location can only jump to neighboring sites of the lattice, forming a lattice path. 
 
-Let's start with an simple example of a discrete-time random walk in which the length of each step is 1. The walker is initially at the coordinates (0, 0) which is the center of the circle. The stochastic process stops once the walker escape from the circle with a radius of 10. 
+Let's start with an simple example of a discrete-time random walk in which the length of each step is one unit. The walker is initially at the coordinates (0, 0) which is the center of the circle. The stochastic process stops once the walker escape from the circle with a radius of 10. 
 
-At each position, the walker can move towards four directions with uniformly distributed probability. Turn North, turn South, turn East and turn West. The probability of each direction is shown below: 
+At each position, the walker can move one unit towards four directions with uniformly distributed probability. Turn North, turn South, turn East and turn West. The probability of each direction is shown below: 
 
 ``` Python
 # Probability of each direction

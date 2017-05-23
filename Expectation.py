@@ -1,6 +1,7 @@
 from statistics import mean
 import random
-
+import matplotlib.pyplot as plt
+import matplotlib.style
 
 class RandomWalk():
     def __init__(self, **kwargs):
@@ -38,6 +39,13 @@ class RandomWalk():
         for i in range(self.NumberOfInteration):
             Result = self.OneIeteration()
             Steps.append(Result)
+        matplotlib.style.use('ggplot')
+        n, bins, patches = plt.hist(Steps)
+        plt.title("2D - Distribution plot of Number of steps")
+        plt.xlabel("Number of Steps")
+        plt.ylabel("Number of Iterations")
+        plt.axvline(mean(Steps), linewidth=2, color = 'b')
+        plt.show()
         return mean(Steps)
 
 
