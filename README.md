@@ -72,13 +72,18 @@ To save animation clock to tick every second, set ```fps=1```. (The number I use
 
 At each coordinate, the probability of the next move is independent of the previous one. 
 
-For each time the walker escape from the circle, we count it as one event and record the number of steps it used to exit. Repeat the same process 10000 times, and then get the average number of steps that walker need to stop the process.
+For each time the walker escape from the circle, we count it as one event and record the number of steps it used to exit. Repeat the same process 100,000 times, and then get the average number of steps that walker need to stop the process.
+
+
+Here is the hisgram plot of the number of steps for 100,000 iterations.
+
+![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/2d%20hist%20plot.png)
 
 ```
 E(X) = 36.38841
 ```
 
-After run the simulation ```10000``` times, we get the stable results of ```36.38841``` which is also known as the expected value of the number of steps. 
+After run the simulation ```100,000``` times, we get the stable results of ```36.38841``` which is also known as the expected value of the number of steps. 
 
 We can apply the same theory to study three dimensional random walk. The walker starts at the coordinate (0, 0, 0) and at each step he will move to one of six directions based on different probabilities. 
 
@@ -98,11 +103,15 @@ Here is the simulation animation for 3-dimensional random walk.
 
 ![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/3DRandomWalk2.gif)
 
-We count each time that walker escapes from the sphere as one event and record the numbers of steps for each event. Repeat the same process 10000 times and finally approaches to a constant number ```25.70093```.
+We count each time that walker escapes from the sphere as one event and record the numbers of steps for each event. Repeat the same process 100,000 times and finally approaches to a constant number ```25.70093```.
+
+Here is the hisgram plot of the number of steps for 100,000 iterations.
+
+![](https://github.com/jqsheng94/Stochastic-Process-and-Random-Walk/blob/master/3d%20hist%20plot.png)
 
 ```
 E(X) = 25.70093
 ```
-After run the simulation ```10000``` times, we get the expectation of  ```25.70093``` as the average number of steps to get out of the sphere. 
+After run the simulation ```100,000``` times, we get the expectation of  ```25.70093``` as the average number of steps to get out of the sphere. 
 
 
